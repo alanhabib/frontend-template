@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from "./pages";
+import { createGlobalStyle } from "styled-components";
+import SignInPage from "./pages/signin";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+  margin: 0;
+  padding: 0;
+  font-family: "Encode Sans Expanded", sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/signin" component={SignInPage} exact />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 
