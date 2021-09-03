@@ -11,7 +11,7 @@ import {
 import Services from "../components/Services";
 import Footer from "../components/Footer";
 
-const Home = () => {
+const Home = ({ auth }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleIsOpen = () => {
@@ -22,7 +22,6 @@ const Home = () => {
     <>
       <Sidebar isOpen={isOpen} toggle={toggleIsOpen} />
       <Navbar toggle={toggleIsOpen} />
-      <HeroSection />
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
       <Services />

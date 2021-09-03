@@ -13,7 +13,26 @@ import {
 } from "./NavBarElements";
 import { animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
+import { ReactComponent as Logo } from "../../assets/images/svg-5.svg";
 
+const navLinks = [
+  {
+    title: "Blog",
+    path: "blog",
+  },
+  {
+    title: "About",
+    path: "about",
+  },
+  {
+    title: "Discover",
+    path: "discover",
+  },
+  {
+    title: "Services",
+    path: "services",
+  },
+];
 const NavBar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
@@ -37,62 +56,26 @@ const NavBar = ({ toggle }) => {
       <Nav scrollNav={scrollNav}>
         <NavBarContainer>
           <NavLogo to="/" onClick={toggleHome}>
-            Dolla
+            <Logo width="50px" height="50px" />
           </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
-            <NavItem>
-              <NavLinks
-                to="about"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                About
-              </NavLinks>
-            </NavItem>
-
-            <NavItem>
-              <NavLinks
-                to="discover"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Discover
-              </NavLinks>
-            </NavItem>
-
-            <NavItem>
-              <NavLinks
-                to="services"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Services
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks
-                to="signup"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Sign Up
-              </NavLinks>
-            </NavItem>
+            {navLinks?.map((link, i) => (
+              <NavItem key={i}>
+                <NavLinks
+                  to={link.path}
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact="true"
+                  offset={-80}
+                >
+                  {link.title}
+                </NavLinks>
+              </NavItem>
+            ))}
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signin">Sign In</NavBtnLink>

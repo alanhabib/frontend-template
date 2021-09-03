@@ -15,6 +15,7 @@ import {
   WebsiteRights,
 } from "./FooterElements";
 import { animateScroll as scroll } from "react-scroll";
+import { ReactComponent as Logo } from "../../assets/images/svg-5.svg";
 
 import {
   FaFacebook,
@@ -31,48 +32,13 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrap>
-        <FooterLinksContainer>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>About us</FooterLinkTitle>
-              <FooterLink to="/">How it works </FooterLink>
-              <FooterLink to="/">Testimonials </FooterLink>
-              <FooterLink to="/">Careers </FooterLink>
-              <FooterLink to="/">Investors </FooterLink>
-              <FooterLink to="/">Terms of Service </FooterLink>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>Contact Us</FooterLinkTitle>
-              <FooterLink to="/">Contact</FooterLink>
-              <FooterLink to="/">Support </FooterLink>
-              <FooterLink to="/">Destinations </FooterLink>
-              <FooterLink to="/">Sponsorships </FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>Videos</FooterLinkTitle>
-              <FooterLink to="/signin">Submit Video </FooterLink>
-              <FooterLink to="/signin">Ambassadors </FooterLink>
-              <FooterLink to="/signin">Agency </FooterLink>
-              <FooterLink to="/signin">Influencer </FooterLink>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>Social Media</FooterLinkTitle>
-              <FooterLink to="/signin">Instagram </FooterLink>
-              <FooterLink to="/signin">Facebook </FooterLink>
-              <FooterLink to="/signin">Youtube </FooterLink>
-              <FooterLink to="/signin">Twitter </FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-        </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to="/" onClick={toggleHome}>
-              dolla
+              <Logo width="50px" height="50px" />
             </SocialLogo>
             <WebsiteRights>
-              dolla &#169; {new Date().getFullYear()} All rights reserved.
+              Alan Habib &#169; {new Date().getFullYear()} All rights reserved.
             </WebsiteRights>
             <SocialIcons>
               <SocialIconLink

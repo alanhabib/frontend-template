@@ -1,8 +1,11 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./pages";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import Home from "./pages/home";
 import { createGlobalStyle } from "styled-components";
 import SignInPage from "./pages/signin";
+import { Auth0Provider } from "@auth0/auth0-react";
+import PageRenderer from "./page-renderer";
+import Blog from "./pages/blog";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -27,12 +30,13 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/signin" component={SignInPage} exact />
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        <Route path="/" component={Blog} exact />
+        {/* <Route path="/" render={() => <Redirect to="/" />} /> */}
+        <Route path="/:page" component={PageRenderer} />
+        {/* <Route path="/signin" component={SignInPage} exact /> */}
+        <Route component={() => 404} />
+      </Switch>
     </>
   );
 }

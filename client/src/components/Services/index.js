@@ -1,7 +1,7 @@
 import React from "react";
-import Icon1 from "../../assets/images/svg-1.svg";
-import Icon2 from "../../assets/images/svg-2.svg";
-import Icon3 from "../../assets/images/svg-3.svg";
+import Icon1 from "../../assets/images/JSHTML.svg";
+import Icon2 from "../../assets/images/svg-1.svg";
+import Icon3 from "../../assets/images/REACT.svg";
 import {
   ServicesCard,
   ServicesContainer,
@@ -15,27 +15,30 @@ import {
 const Services = () => {
   return (
     <ServicesContainer id="services">
-      <ServicesH1>Our services</ServicesH1>
+      <ServicesH1>my Work</ServicesH1>
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1}></ServicesIcon>
-          <ServicesH2>Reduce Expenses</ServicesH2>
+          <ServicesH2>Coding</ServicesH2>
           <ServicesP>
-            We help reduce your fees and increase your overall revenue
+            Solving complex problems in JavaScript client and server based.
           </ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2}></ServicesIcon>
-          <ServicesH2>Virtual offices</ServicesH2>
+          <ServicesH2>Mentoring</ServicesH2>
           <ServicesP>
-            You can access our platform online anywhere in the world
+            If you want a mentor to guide you through the vast occean of
+            JavaScript I can set up a guide for you.
           </ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3}></ServicesIcon>
-          <ServicesH2>Premium Benefits</ServicesH2>
+          <ServicesH2>Articles/Blog</ServicesH2>
           <ServicesP>
-            Unlock our special membership cards that returns 5% cash back
+            I will soon open a section on my website where I write articles
+            about programming and some blog articles of my way on becoming a
+            developer.
           </ServicesP>
         </ServicesCard>
       </ServicesWrapper>
